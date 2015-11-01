@@ -10,22 +10,25 @@ print("""
     <H1>Add Item</H1>
 """)
 
+
 formData = cgi.FieldStorage()
 
 if "itemName" not in formData or "itemDesc" not in formData or "itemDonorName" not in formData or "itemPrice" not in formData:
 	print("<h3>Error</h3>")
 	print("Please fill out all the fields!")
 
-print("<p>name:", formData['itemName'].value, "</p>")
-print("<p>desc:", formData['itemDesc'].value, "</p>")
-print("<p>donor:", formData['itemDonorName'].value, "</p>")
-print("<p>startPrice:", formData['itemPrice'].value, "</p>")
-print("<p>imgurl:", formData['itemImgURL'].value, "</p>")
+	
+desc = formData['itemDesc'].value
+donor = formData['itemDonorName'].value
+imgurl = formData['itemImgURL'].value
+name = formData['itemName'].value
+startPrice = formData['itemPrice'].value
 
-desc = formData.getvalue('itemDesc')
-donor = formData.getvalue('itemDonorName')
-imgurl = formData.getvalue('itemImgURL')
-name = formData.getvalue('itemName')
-startPrice = formData.getvalue('itemPrice')
+print("<p>name:", name, "</p>")
+print("<p>desc:", desc, "</p>")
+print("<p>donor:", donor, "</p>")
+print("<p>startPrice:", startPrice, "</p>")
+print("<p>imgurl:", imgurl, "</p>")
 
-print("<p>", createObject(name,desc,donor,startPrice,imgurl), "</p>")
+
+createObject(name,desc,donor,startPrice,imgurl)
