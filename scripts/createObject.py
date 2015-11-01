@@ -1,7 +1,7 @@
 import json,http.client
 
 def create(name,desc,donor,startPrice,imgurl):
-	connection = httplib.HTTPSConnection('api.parse.com', 443)
+	connection = http.client.HTTPSConnection('api.parse.com', 443)
 	connection.connect()
 	connection.request('POST', '/1/classes/Item', json.dumps({
 			"description": desc,
