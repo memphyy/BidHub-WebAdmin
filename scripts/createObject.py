@@ -1,4 +1,6 @@
-import json,httplib,cgi
+#! /usr/bin/python
+
+import json,httplib,cgi,cgitb
 
 formData = cgi.fieldStorage()
 
@@ -7,6 +9,7 @@ if "itemName" not in formData or "itemDesc" not in formData or "itemDonorName" n
 	print "Please fill out all the fields!"
 	return
 	
+print "Content-type:text/html\r\n\r\n"
 
 print "<p>name:", formData['itemName'].value, "</p>"
 print "<p>desc:", formData['itemDesc'].value, "</p>"
