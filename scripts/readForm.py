@@ -31,4 +31,4 @@ print("<p>startPrice:", startPrice, "</p>")
 print("<p>imgurl:", imgurl, "</p>")
 
 
-createObject.create(name,desc,donor,startPrice,imgurl)
+print("<p>", createObject.create(name,desc,donor,startPrice,imgurl), "</p>")

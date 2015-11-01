@@ -1,6 +1,7 @@
 import json,http.client
 
 def create(name,desc,donor,startPrice,imgurl):
+	
 	connection = http.client.HTTPSConnection('api.parse.com', 443)
 	connection.connect()
 	connection.request('POST', '/1/classes/Item', json.dumps({
@@ -16,5 +17,9 @@ def create(name,desc,donor,startPrice,imgurl):
 		   "X-Parse-REST-API-Key": "G02koccgg9q6RzqwRmpiQDx3QllASet5iW2XbLob",
 		   "Content-Type": "application/json"
 		 })
-	#results = json.loads(connection.getresponse().read())
-	#return results
+	
+	
+	str_response = connection.getresponse().read().decode('utf-8')
+	
+	results = json.loads(str_response)
+	return results
