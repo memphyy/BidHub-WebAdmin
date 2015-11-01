@@ -1,15 +1,23 @@
 #!/usr/bin/python
 
 import json,httplib,cgi,cgitb
+cgitb.enable()
+
+print "Content-Type: text/html"
+print
+print """
+    <TITLE>CGI script ! Python</TITLE>
+    <H1>This is my first CGI script</H1>
+    Hello, world!
+"""
+
 
 formData = cgi.fieldStorage()
 
 if "itemName" not in formData or "itemDesc" not in formData or "itemDonorName" not in formData or "itemPrice" not in formData:
-	print "<h1>Error</h1>"
+	print "<h3>Error</h3>"
 	print "Please fill out all the fields!"
 	return
-	
-print "Content-type:text/html\r\n\r\n"
 
 print "<p>name:", formData['itemName'].value, "</p>"
 print "<p>desc:", formData['itemDesc'].value, "</p>"
