@@ -16,7 +16,6 @@ formData = cgi.fieldStorage()
 if "itemName" not in formData or "itemDesc" not in formData or "itemDonorName" not in formData or "itemPrice" not in formData:
 	print("<h3>Error</h3>")
 	print("Please fill out all the fields!")
-	return
 
 print("<p>name:", formData['itemName'].value, "</p>")
 print("<p>desc:", formData['itemDesc'].value, "</p>")
