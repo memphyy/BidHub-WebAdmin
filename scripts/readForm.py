@@ -6,12 +6,11 @@ cgitb.enable()
 print("Content-Type: text/html")
 print()
 print("""
-    <TITLE>CGI script ! Python</TITLE>
-    <H1>This is my first CGI script</H1>
-    Hello, world!
+    <TITLE>Add Item</TITLE>
+    <H1>Add Item</H1>
 """)
 
-formData = cgi.fieldStorage()
+formData = cgi.FieldStorage()
 
 if "itemName" not in formData or "itemDesc" not in formData or "itemDonorName" not in formData or "itemPrice" not in formData:
 	print("<h3>Error</h3>")
