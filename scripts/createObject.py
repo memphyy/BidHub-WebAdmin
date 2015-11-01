@@ -17,4 +17,4 @@ def createObject(name,desc,donor,startPrice,imgurl):
 		   "Content-Type": "application/json"
 		 })
 	results = json.loads(connection.getresponse().read())
-	print results
+	return results
