@@ -108,6 +108,22 @@ body {
 		overflow: scroll;
 	}
 
+	p {
+		font-family: "Roboto", sans-serif;
+		font-weight: 200;
+		font-size: 16px;
+		padding: 5px;
+		color: #fff;
+	}
+	
+	label {
+		font-family: "Roboto", sans-serif;
+		font-weight: 200;
+		font-size: 16px;
+		padding: 5px;
+		color: #fff;
+	}
+	
 	h1 {
 		height: 80px;
 		line-height: 80px;
