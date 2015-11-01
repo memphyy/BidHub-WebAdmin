@@ -8,8 +8,46 @@
 
 	<h3>Add Item</h3>
 
-	<form action="scripts/readForm.py" method="POST">
-		<fieldset class="card">
+	<div class="card left">
+            <div class="header" style="background: #999"></div>
+            <div style="height: 3px; background: #777"></div>
+            
+			<form action="scripts/readForm.py" method="POST">
+				<div class="image" id="imgcontainer" style="text-align: center; position: relative">
+					<img id="newimg" src="{{item.imageurl}}" style="position: relative" />
+					<input id="imgurl" name="itemImgURL" type="text" placeholder="image url" style="position: absolute; margin-left: 10px; margin-bottom: 10px; left: 0; bottom: 0; right: 0; margin-top: 70px; background: #515359;" onBlur="showImg()" />
+					<input type="submit" value="submit item"
+						   style="position: absolute; top: 0; right: 0; margin-top: 10px; margin-right: 10px; background: #669900;
+						   border: 1px solid #fff;" />
+				</div>
+				<div style="height: 1px; background: #AAA"></div>
+				<div class="infocontainer" style="min-height: 70px;">
+					<div class="names">
+						<span class="title"><input id="itemname" name="itemName" type="text" class="title" placeholder="item name. keep it short" style="width: 230px;" /></span><br/>
+						<span class="donor"><input id="donorname" name="itemDonorName" type="text" class="donor" placeholder="your name. keep it real" style="width: 230px;" /></span>
+					</div>
+					<div class="bids">
+						<span class="winningbid">$<input id="price" type="text" name="itemPrice" class="winningbid" placeholder="$$" style="width: 40px; margin-left: 5px;"/></span><br/>
+						<span class="donor">LIST PRICE</span>
+					</div>
+				</div>
+
+				<div style="height: 1px; background: #AAA"></div>
+
+				<div class="description" id="description" name="itemDesc" style="max-height: 100px; min-height: 100px;">
+					<textarea id="descriptionbody" style="height: 90px;" placeholder="talk about your item. this can be as long as you want. the reader's attention span is the limit!"></textarea>
+				</div>
+			</form>
+            <div style="height: 3px; background: #777"></div>
+            <div class="footer" style="background: #999"></div>
+        </div>
+	
+	
+	
+	
+	<!--<div class="card left">
+		<form action="scripts/readForm.py" method="POST">
+			
 			<label for="itemName">Name:</label>
 			<input type="text" name="itemName" id="itemName"/>
 			<br />
@@ -32,8 +70,11 @@
 			
 			<input type="submit" value="Add Item" />
 			<input type="reset" value="Reset" />
-			
-		</fieldset>
-	</form>
+		</form>
+		
+		<div style="height: 3px; background: #777"></div>
+		<div class="footer" style="background: #999"></div>
+	</div>-->
+	
 </body>
 </html>

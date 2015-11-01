@@ -83,7 +83,7 @@ body {
 
 	.donor {
 		font-size: 14px;
-		color: #999;
+		color: #fff;
 		font-weight: 200;
 		text-transform: uppercase;
 	}
@@ -114,6 +114,15 @@ body {
 		font-size: 16px;
 		padding: 5px;
 		color: #fff;
+	}
+	
+	a {
+		font-family: "Roboto", sans-serif;
+		font-weight: 200;
+		font-size: 16px;
+		padding: 5px;
+		color: #fff;
+		text-decoration: underline
 	}
 	
 	label {
@@ -166,19 +175,19 @@ body {
 	}
 
 	::-webkit-input-placeholder {
-		color: #777;
+		color: #AAA;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-		color: #777;
+		color: #AAA;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-		color: #777;
+		color: #AAA;
 	}
 
 	:-ms-input-placeholder {
-		color: #777;
+		color: #AAA;
 	}
 
 	.removebutton {
