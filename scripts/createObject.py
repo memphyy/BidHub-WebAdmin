@@ -16,5 +16,5 @@ def create(name,desc,donor,startPrice,imgurl):
 		   "X-Parse-REST-API-Key": "G02koccgg9q6RzqwRmpiQDx3QllASet5iW2XbLob",
 		   "Content-Type": "application/json"
 		 })
-	results = json.loads(connection.getresponse().read())
-	return results
+	#results = json.loads(connection.getresponse().read())
+	#return results
