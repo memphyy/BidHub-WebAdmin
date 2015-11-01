@@ -22,7 +22,7 @@ desc = formData['itemDesc'].value
 donor = formData['itemDonorName'].value
 imgurl = formData['itemImgURL'].value
 name = formData['itemName'].value
-startPrice = formData['itemPrice'].value
+startPrice = int(formData['itemPrice'].value)
 
 print("<p>name:", name, "</p>")
 print("<p>desc:", desc, "</p>")
