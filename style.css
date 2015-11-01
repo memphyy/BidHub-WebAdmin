@@ -108,6 +108,24 @@ body {
 		overflow: scroll;
 	}
 
+	h1 {
+		height: 80px;
+		line-height: 80px;
+		text-align: left;
+		font-weight: 200;
+		font-size: 26px;
+		color: #fff;
+	}
+	
+	h3 {
+		height: 60px;
+		line-height: 60px;
+		text-align: left;
+		font-weight: 200;
+		font-size: 20px;
+		color: #fff;
+	}
+	
 	input {
 		background: transparent;
 		border: none;
