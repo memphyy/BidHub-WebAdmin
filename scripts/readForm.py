@@ -7,9 +7,11 @@ cgitb.enable()
 print("Content-Type: text/html")
 print()
 print("""
-    <TITLE>Add Item</TITLE>
-    <H1>Add Item</H1>
-""")
+    <hmtl><head><title>Add Item</title>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css"></head>
+	<body><h1>Add Item</h1>
+	""")
 
 
 formData = cgi.FieldStorage()
@@ -56,3 +58,7 @@ print("<p>closeTime:", closeTime, "</p>")
 
 
 print("<p>", createObject.create(name,desc,donor,startPrice,imgurl,openTime,closeTime), "</p>")
+
+print("""
+	</body></html>
+	""")
