@@ -30,17 +30,17 @@ closeTimeRaw = str(formData['itemCloseTime'].value)
 	# html date output: YYYY-MM-DD
 	# html time output: HH(24):MM
 
-openYear = int(openDate[0:3])
-openMonth = int(openDate[5:6])
-openDay = int(openDate[8:9])
-openHour = int(openTimeRaw[0:1])
-openMin = int(openTimeRaw[3:4])
+openYear = int(openDate[0:4])
+openMonth = int(openDate[5:7])
+openDay = int(openDate[8:10])
+openHour = int(openTimeRaw[0:2])
+openMin = int(openTimeRaw[3:5])
 
-closeYear = int(closeDate[0:3])
-closeMonth = int(closeDate[5:6])
-closeDay = int(closeDate[8:9])
-closeHour = int(closeTimeRaw[0:1])
-closeMin = int(closeTimeRaw[3:4])
+closeYear = int(closeDate[0:4])
+closeMonth = int(closeDate[5:7])
+closeDay = int(closeDate[8:10])
+closeHour = int(closeTimeRaw[0:2])
+closeMin = int(closeTimeRaw[3:5])
 
 
 openTime = datetime.datetime(openYear,openMonth,openDay,openHour,openMin).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
