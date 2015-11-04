@@ -9,8 +9,8 @@ auctionApp.controller('ItemCardsCtrl', function ($scope) {
         url: "https://api.parse.com/1/classes/Item",
         type: "GET",
         beforeSend: function(xhr){
-            xhr.setRequestHeader('X-Parse-Application-Id', '<your app id>');
-            xhr.setRequestHeader('X-Parse-REST-API-Key', '<your REST API key, NOT YOUR CLIENT KEY>');
+            xhr.setRequestHeader('X-Parse-Application-Id', 'WhkQetI8nb0HrIykoaNc8LJ9flHIxOvgaXhFXFxm');
+            xhr.setRequestHeader('X-Parse-REST-API-Key', 'G02koccgg9q6RzqwRmpiQDx3QllASet5iW2XbLob');
         },
         success: function(result) {
             $scope.$apply(function(){

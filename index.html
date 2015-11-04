@@ -3,175 +3,36 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type="text/css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
     <script src="controllers.js"></script>
     <script src="client.js"></script>
     <title>Manage Auction</title>
-    <style>
-        body {
-            margin: 0px;
-            font-family: 'Roboto', sans-serif;
-            background: #303030;
-        }
-
-        #container {
-            padding-top: 20px;
-            width: 740px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #header {
-            height: 80px;
-            line-height: 80px;
-            text-align: left;
-            font-weight: 200;
-            font-size: 26px;
-            color: #fff;
-        }
-
-        #content {
-            min-height: 300px;
-        }
-
-        .card {
-            width: 360px;
-            background: #515359;
-            border-radius: 3px;
-            -webkit-box-shadow: -2px 4px 16px -3px rgba(0,0,0,0.75);
-            -moz-box-shadow: -2px 4px 16px -3px rgba(0,0,0,0.75);
-            box-shadow: -2px 4px 16px -3px rgba(0,0,0,0.75);
-            margin-bottom: 20px;
-        }
-
-        .left {
-            float: left;
-        }
-
-        .right {
-            float: right;
-        }
-
-        .header {
-            height: 30px;
-            background-color: #669900;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-        }
-
-        .footer {
-            height: 10px;
-            background-color: #669900;
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-        }
-
-        .image {
-            width: 360px;
-            height: 160px;
-            overflow: hidden;
-        }
-
-        .image img {
-            width: 360px;
-        }
-
-        .infocontainer {
-            padding: 10px;
-            min-height: 50px;
-        }
-
-        .names {
-            float: left;
-        }
-
-        .title {
-            font-weight: 200;
-            color: #fff;
-            font-size: 22px;
-        }
-
-        .donor {
-            font-size: 14px;
-            color: #999;
-            font-weight: 200;
-            text-transform: uppercase;
-        }
-
-        .bids {
-            float: right;
-            text-align: right;
-        }
-
-        .winningbid {
-            color: #669900;
-            font-size: 22px;
-        }
-
-        .description {
-            color: #fff;
-            font-weight: 300;
-            font-size: 13px;
-            padding: 10px;
-            min-height: 120px;
-            max-height: 120px;
-            overflow: scroll;
-        }
-
-        input {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            font-family: "Roboto", sans-serif;
-            font-weight: 200;
-            font-size: 16px;
-            padding: 5px;
-            color: #fff;
-        }
-
-        textarea {
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #ccc;
-            font-family: "Roboto", sans-serif;
-            font-weight: 200;
-            font-size: 13px;
-            width: 100%;
-            min-height: 50px;
-            color: #fff;
-        }
-
-        ::-webkit-input-placeholder {
-            color: #777;
-        }
-
-        :-moz-placeholder { /* Firefox 18- */
-            color: #777;
-        }
-
-        ::-moz-placeholder {  /* Firefox 19+ */
-            color: #777;
-        }
-
-        :-ms-input-placeholder {
-            color: #777;
-        }
-
-        .removebutton {
-            display: none;
-        }
-
-        .card:hover .removebutton {
-            display: block;
-        }
-    </style>
 
     <script>
         function showImg() {
             $("#newimg").attr("src", $("#imgurl").val());
         }
-
+		
+		function deleteItem() {
+		
+			$.ajax({
+				type: "",
+				url: "https://api.parse.com/1/classes/Item",
+				beforeSend: function(xhr){
+                    xhr.setRequestHeader('X-Parse-Application-Id', 'WhkQetI8nb0HrIykoaNc8LJ9flHIxOvgaXhFXFxm');
+                    xhr.setRequestHeader('X-Parse-REST-API-Key', 'G02koccgg9q6RzqwRmpiQDx3QllASet5iW2XbLob');
+                },
+				data: ,
+				success: function () {
+                    location.reload();
+                },
+                contentType:"application/json; charset=utf-8",
+                dataType:"json"
+			});
+		}
+		
         function createItem() {
 
             var newItem = JSON.stringify(
@@ -188,8 +49,8 @@
                 type: "POST",
                 url: "https://api.parse.com/1/classes/Item",
                 beforeSend: function(xhr){
-                    xhr.setRequestHeader('X-Parse-Application-Id', '<your app id>');
-                    xhr.setRequestHeader('X-Parse-REST-API-Key', '<your rest api key>');
+                    xhr.setRequestHeader('X-Parse-Application-Id', 'WhkQetI8nb0HrIykoaNc8LJ9flHIxOvgaXhFXFxm');
+                    xhr.setRequestHeader('X-Parse-REST-API-Key', 'G02koccgg9q6RzqwRmpiQDx3QllASet5iW2XbLob');
                 },
                 data: newItem,
                 success: function () {
@@ -270,42 +131,79 @@
             <div style="height: 3px; background: #777"></div>
             <div class="footer" style="background: #999"></div>
         </div>
-
-        <!-- OLD CODE FOR ADDING/DISPLAYING/REMOVING ITEMS FROM THE WEB -->
-
-        <!--
-        <div class="card left">
+		
+		<div class="card left">
             <div class="header" style="background: #999"></div>
             <div style="height: 3px; background: #777"></div>
-            <div class="image" id="imgcontainer" style="text-align: center; position: relative">
-                <img id="newimg" src="{{item.imageurl}}" style="position: relative" />
-                <input id="imgurl" type="text" placeholder="image url" style="position: absolute; margin-left: 10px; margin-bottom: 10px; left: 0; bottom: 0; right: 0; margin-top: 70px; background: #515359;" onBlur="showImg()" />
-                <input type="button" value="submit item"
-                       style="position: absolute; top: 0; right: 0; margin-top: 10px; margin-right: 10px; background: #669900;
-                       border: 1px solid #fff;"
-                        onClick="createItem()"/>
-            </div>
-            <div style="height: 1px; background: #aaaaaa"></div>
-            <div class="infocontainer" style="min-height: 70px;">
-                <div class="names">
-                    <span class="title"><input id="itemname" type="text" class="title" placeholder="item name. keep it short" style="width: 230px;" /></span><br/>
-                    <span class="donor"><input id="donorname" type="text" class="donor" placeholder="your name. keep it real" style="width: 230px;" /></span>
-                </div>
-                <div class="bids">
-                    <span class="winningbid">$<input id="price" type="text" class="winningbid" placeholder="$$" style="width: 40px; margin-left: 5px;"/></span><br/>
-                    <span class="donor">LIST PRICE</span>
-                </div>
-            </div>
+            
+			<form action="scripts/readForm.py" method="POST">
+				<div class="image" id="imgcontainer" style="text-align: center; position: relative">
+					<img id="newimg" src="{{item.imageurl}}" style="position: relative" />
+					<input id="imgurl" name="itemImgURL" type="text" placeholder="image url" style="position: absolute; margin-left: 10px; margin-bottom: 10px; left: 0; bottom: 0; right: 0; margin-top: 70px; background: #515359;" onBlur="showImg()" />
+					<input type="submit" value="submit item"
+						   style="position: absolute; top: 0; right: 0; margin-top: 10px; margin-right: 10px; background: #669900;
+						   border: 1px solid #fff;" />
+				</div>
+				<div style="height: 1px; background: #AAA"></div>
+				<div class="infocontainer" style="min-height: 70px;">
+					<div class="names">
+						<span class="title"><input id="itemname" name="itemName" type="text" class="title" placeholder="item name. keep it short" style="width: 230px;" /></span><br/>
+						<span class="donor"><input id="donorname" name="itemDonorName" type="text" class="donor" placeholder="your name. keep it real" style="width: 230px;" /></span></br>
+					</div>
+					<div class="names">
+						<span class="donor"><input id="openDate" name="itemOpenDate" type="date" class="donor" style="width: 230px;" /><label for="openDate" style="color:#AAA;">Open Time</label></span>
+						<span class="donor"><input id="openTime" name="itemOpenTime" type="time" class="donor" style="width: 230px;" /></span></br>
+						<span class="donor"><input id="closeDate" name="itemCloseDate" type="date" class="donor" style="width: 230px;" /><label for="closeDate" style="color:#AAA;">Close Time</label></</span>
+						<span class="donor"><input id="closeTime" name="itemCloseTime" type="time" class="donor" style="width: 230px;" /></span></br>
+					</div>
+					<div class="bids">
+						<span class="winningbid">$<input id="price" type="text" name="itemPrice" class="winningbid" placeholder="$$" style="width: 40px; margin-left: 5px;"/></span><br/>
+						<span class="donor">LIST PRICE</span>
+					</div>
+				</div>
 
-            <div style="height: 1px; background: #aaaaaa"></div>
+				<div style="height: 1px; background: #AAA"></div>
 
-            <div class="description" id="description" style="max-height: 100px; min-height: 100px;">
-                <textarea id="descriptionbody" style="height: 90px;" placeholder="talk about your item. this can be as long as you want. the reader's attention span is the limit!"></textarea>
-            </div>
-
+				<div class="description" id="description" style="max-height: 100px; min-height: 100px;">
+					<textarea id="descriptionbody" style="height: 90px;" name="itemDesc" placeholder="talk about your item. this can be as long as you want. the reader's attention span is the limit!"></textarea>
+				</div>
+			</form>
             <div style="height: 3px; background: #777"></div>
             <div class="footer" style="background: #999"></div>
         </div>
+	
+		<!-- Old form for adding items -->
+		<!--
+		<div class="card left">
+			<form action="scripts/readForm.py" method="POST">
+				
+				<label for="itemName">Name:</label>
+				<input type="text" name="itemName" id="itemName"/>
+				<br />
+				
+				<label for="itemDesc">Description:</label>
+				<textarea name="itemDesc" id="itemDesc" placeholder="Type item description here..."></textarea>
+				<br />
+				
+				<label for="itemDonorName">Donor:</label>
+				<input type="text" name="itemDonorName" id="itemDonorName"/>
+				<br />
+				
+				<label for="itemPrice">Opening Price:</label>
+				<input type="text" name="itemPrice" id="itemPrice"/>
+				<br />
+				
+				<label for="itemImgURL">Image URL:</label>
+				<input type="text" name="itemImgURL" id="itemImgURL"/>
+				<br /> <br />
+				
+				<input type="submit" value="Add Item" />
+				<input type="reset" value="Reset" />
+			</form>
+			
+			<div style="height: 3px; background: #777"></div>
+		<div class="footer" style="background: #999"></div>
+	</div> -->
 
         <div class="card left" ng-repeat="item in items" ng-class-even="'left'" ng-class-odd="'right'">
             <div class="header"></div>
@@ -337,7 +235,7 @@
 
             <div style="height: 3px; background: #558800"></div>
             <div class="footer"></div>
-        </div>-->
+        </div>
     </div>
 </div>
 </body>
